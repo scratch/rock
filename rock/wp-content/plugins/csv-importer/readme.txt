@@ -3,8 +3,8 @@ Contributors: dvkob
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=4YJEU5U2Y4LTS&lc=US&item_name=Support%20CSV%20Importer%20development&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Tags: csv, import, batch, spreadsheet, excel
 Requires at least: 2.0.2
-Tested up to: 3.2.1
-Stable tag: 0.3.6
+Tested up to: 3.8
+Stable tag: 0.3.8
 
 Import posts from CSV files into WordPress.
 
@@ -248,6 +248,9 @@ Contributors:
 
 == Changelog ==
 
+= 0.3.8 =
+*   Minor bug and security fixes
+
 = 0.3.7 =
 *   Make hierarchical custom taxonomy line splitting more robust
 *   Fix deprecation warnings
@@ -317,6 +320,10 @@ Contributors:
 
 
 == Upgrade Notice ==
+
+= 0.3.8 =
+Added a check to see if the user is allowed to create posts and pages prior
+to importing.
 
 = 0.3.7 =
 More robust handling of hierarchical custom taxonomies; removed deprecation
