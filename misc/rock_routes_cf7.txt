@@ -1,0 +1,16 @@
+<p>Route Name<br />
+    [text* post_title] </p>
+
+<p>Description<br />
+    [textarea* post_content 50x4/350 class:route-descr] </p>
+
+<p>Image<br />
+    [file meta_route_image] </p>
+
+<p>Grade<br />
+    [text meta_route_grade] </p>
+
+<p>First Ascent <br />
+    [text  meta_route_fa] </p>
+
+<p>[submit "Post"]</p>
