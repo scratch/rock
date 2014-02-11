@@ -17,7 +17,10 @@ class WPCF7_ContactForm {
 	public $scanned_form_tags;
 	public $posted_data;
 	public $uploaded_files = array();
-	public $skip_mail = false;
+	/* -- nk. Don't want mail
+  public $skip_mail = false;
+   */
+	public $skip_mail = true;
 
 	public static function count() {
 		return self::$found_items;
