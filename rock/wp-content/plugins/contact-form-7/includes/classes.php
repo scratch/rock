@@ -527,9 +527,11 @@ class WPCF7_ContactForm {
 		}
 
 		// remove upload files
+		/* -- nk. We want to file retained.
 		foreach ( (array) $this->uploaded_files as $name => $path ) {
 			@unlink( $path );
 		}
+		*/
 
 		do_action_ref_array( 'wpcf7_submit', array( &$this, $result ) );
 
