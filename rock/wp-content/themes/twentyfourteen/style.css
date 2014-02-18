@@ -4182,3 +4182,10 @@ a.post-thumbnail:hover {
 		line-height: 36px;
 	}
 }
+
+
+/* -- nk. Media stuff. Should go somewhere else */
+.route-meta-image  {
+  image-width: 50px;
+  image-height: 90px;
+}

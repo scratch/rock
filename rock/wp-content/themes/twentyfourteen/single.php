@@ -7,6 +7,25 @@
  * @since Twenty Fourteen 1.0
  */
 
+function rr_display_image()
+{
+  $img_name = get_post_meta (get_the_ID(), 'route_image', true);
+  ?>
+
+  <ul class='post-meta'>
+  <li class='route-meta-image'>
+  <img src=<?php 
+  $rr_upload_dir = wp_upload_dir();
+  $rr_dir = $rr_upload_dir['url'] . '/wpcf7_uploads/' . $img_name . " ";
+  echo $rr_dir; ?>alt="Smiley face">
+  </li>
+  </ul>
+
+<?php
+}
+
+
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">
@@ -35,6 +54,7 @@ get_header(); ?>
 
 				// -- nk. 
 				the_meta();
+        rr_display_image();
 				endwhile;
 			?>
 		</div><!-- #content -->
