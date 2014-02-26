@@ -337,7 +337,7 @@ function wpcf7_cleanup_upload_files() {
 	}
 }
 
-/*
+/* -- nk. So the files uploaded don't get cleaned up
 if ( ! is_admin() && 'GET' == $_SERVER['REQUEST_METHOD'] )
 	wpcf7_cleanup_upload_files();
 */
