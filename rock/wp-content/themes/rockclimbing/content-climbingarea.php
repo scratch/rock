@@ -16,7 +16,7 @@
 <div id="areaimg" class="climbingareapage-img">
 	<?php the_post_thumbnail(); ?>
 </div><!--.climbingareapage-img-->
- <h1><img width="25" height="25" src="http://localhost/turahalliguide/wp-content/uploads/2014/02/area.jpg" alt="area icon">&nbsp;&nbsp;<?php the_title(); ?></h1>
+ <h1><img width="25" height="25" src="http://localhost/rock/wp-content/uploads/2014/02/area.jpg" alt="area icon">&nbsp;&nbsp;<?php the_title(); ?></h1>
 
 </header><!-- .climbingareapage-header -->
 
@@ -46,9 +46,14 @@
 
 	<div class="climbingareapage-bouldermeta">
 
-	<img width="30" height="30" src="http://localhost/turahalliguide/wp-content/uploads/2014/02/boulder.jpg" alt="boulder icon">
+	<img width="30" height="30" src="http://localhost/rock/wp-content/uploads/2014/02/boulder.jpg" alt="boulder icon">
 	<div class="bouldermeta-namelistroutes">
-<?php echo '<h1 style="color:#0084b4;font-size:15px;font-weight:700;"><a href="<?php echo esc_url(post_permalink(pi2));?>"> '.$qb['meta_value']. '</a></h1>'; ?>
+
+<!--
+<?php echo '<h1 style="color:#0084b4;font-size:15px;font-weight:700;"><a href="<?php echo esc_url(post_permalink($pi2));?>"> '.$qb['meta_value']. '</a></h1>'; ?>
+-->
+
+<?php echo '<h1 style="color:#0084b4;font-size:15px;font-weight:700;"><a href="' . esc_url(post_permalink($pi2)) . '">' . $qb['meta_value'] . '</a></h1>'; ?>
 
 <?php $bn=mysql_real_escape_string($qb['meta_value']); ?>
 
@@ -60,8 +65,12 @@
 	<div class="bouldermeta-listroutes">
 	<?php while ($pirn = mysql_fetch_assoc($r5)) { ?>
 
-	<?php echo '<img width="15" height="15" src="http://localhost/turahalliguide/wp-content/uploads/2014/02/arrow1.jpg" alt="route icon">&nbsp;&nbsp;<a href="<?php echo esc_url(post_permalink($pi5));?>">' .$pirn['meta_value']. '</a>&nbsp;&nbsp;'; ?>
-									<?php } ?>
+<!-- nk
+	<php echo '<img width="15" height="15" src="http://localhost/rock/wp-content/uploads/2014/02/arrow1.jpg" alt="route icon">&nbsp;&nbsp;<a href="<php echo esc_url(post_permalink($pi5));>">' .$pirn['meta_value']. '</a>&nbsp;&nbsp;'; >
+	<?php echo '<img width="15" height="15" src="http://localhost/rock/wp-content/uploads/2014/02/arrow1.jpg" alt="route icon">&nbsp;&nbsp' .  '<a href="' . esc_url(post_permalink($pi5)) . '">' . $pirn['meta_value'] . '</a>&nbsp;&nbsp;'; ?>
+-->
+	<?php echo '<img width="15" height="15" src=" ' . get_site_url() . '/wp-content/uploads/2014/02/arrow1.jpg" alt="route icon">&nbsp;&nbsp' .  '<a href="' . esc_url(post_permalink($pi5)) . '">' . $pirn['meta_value'] . '</a>&nbsp;&nbsp;'; ?>
+<?php } ?>
 	</div><!----bouldermeta-listroutes---->
 <?php } ?>
 
