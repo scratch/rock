@@ -1,0 +1,961 @@
+/*
+Theme Name: rockclimbing
+Theme URI: http://themerockclimbingr.com/
+Author: Themerockclimbingr
+Author URI: http://themerockclimbingr.com/
+Description: The rockclimbing theme is a simple, minimalist theme based on Underscores and the original rockclimbing Theme by Ian Stewart. It was created especially as a learning theme for The Themerockclimbingr WordPress Theme Tutorial: 2nd Edition.
+Version: 2.0
+License: GNU General Public License
+License URI: license.txt
+Tags: light, white, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, custom-backgroud, custom-header, custom-menu, featured-images, flexible-header, microformats, post-formats, rtl-language-support, threaded-comments, translation-ready
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+<style type="text/css">
+@impost url("mediaqueries.css");
+</style>
+
+/* =Reset
+-------------------------------------------------------------- */
+ 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+html {
+    font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+    overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+    -webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+    -ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body {
+    background: #fff;
+
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+    display: block;
+}
+ol, ul {
+    list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+    border-collapse: separate;
+    border-spacing: 0;
+}
+caption, th, td {
+    font-weight: normal;
+    text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: "";
+}
+blockquote, q {
+    quotes: "" "";
+}
+a:focus {
+    outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+    outline: 0;
+}
+a img {
+    border: 0;
+}
+
+/* =Global   REBUILD CSS
+----------------------------------------------- */
+html { 
+	//margin:0; 
+	height:100%;
+}
+div {
+	display:block;
+}
+body {
+	font-size:62.5%;
+	font-family:sans-serif;
+	line-height:22px;
+	color:#444444;
+	height:100%;
+}
+p {
+	display:block;
+	padding: 20px;
+	font-size:15px;
+}
+.site-navigation post-navigation {
+	margin:20px;
+}
+#nav-above {
+margin-left:30px;
+padding-left:400px;
+}
+.nav-previous a {
+font-size:10px;
+}
+/* SITE HEADER */
+
+.rockclimbing-header {
+			height:100px;
+			width:100%;
+			//background-color:#244902;
+			background: #f2f2f2;
+			//text-align:center;
+			padding-left:20px;
+			position:fixed;
+			top:0px;
+			margin:0px auto;
+			text-transform:uppercase;
+			z-index:1000;
+			border-bottom:solid;
+			border-width:1px;
+			border-color:#ccc;
+}
+.rockclimbing-header h1 {
+	width:300px;
+	float:left;
+	padding-top:50px;
+}
+.rockclimbing-header h1 a {
+			font-family:Helvetica,Arial,sans-serif;
+			font-size:25px;
+			font-weight:600;
+			text-decoration:none;
+			display:block;
+			width:300px;
+			color:#424242;
+}
+ul#rockclimbing-header-menu {
+	position: absolute;
+	display:inline-block;
+	margin: 0;
+	//padding: 20px 0 0;
+	min-width: 200px;
+	max-width: 75%;
+	//background: #244902;
+	background: #f2f2f2;
+	list-style: none;
+	text-align: left;
+	-webkit-transition: left 0.3s;
+	-moz-transition: left 0.3s;
+	-ms-transition: left 0.3s;
+	-o-transition: left 0.3s;
+	transition: left 0.3s;
+	z-index: 1;
+	}
+.siteheadermenu-main {
+				position:relative;
+				list-style-type:none;
+				float:left;
+				display:flex;
+				padding-top:55px;
+}
+.siteheadermenu-main li {
+
+}
+.siteheadermenu-main li a {
+		font-family:Helvetica,Arial;
+		font-weight:700;
+		display:block;
+		line-height:34px;
+		padding:0 6px;
+		margin:0 4px;
+		font-size:13px;
+		//color:#ddd;
+		//color:#a4a4a4;
+		color:#424242;
+		height:40px;
+		float:left;
+		text-decoration:none;
+		text-transform:none;
+}
+.siteheadermenu-main li a:hover {
+	color:#009933;
+}
+.sub-menu {
+	//display:none;
+	//min-width:0;
+	//background:#444444;
+	//margin-top:-1px;
+	//border:#444 solid 1px;
+	//border-top:0;
+	//position:static;
+	//padding:0;
+}
+/* PAGE CONTAINER */
+
+.pagecontainer {
+	height:100%;
+	margin:60px 0 5px 0;
+}
+
+/* PAGE AFTER HEADER */
+
+#pageafterheader {
+	padding-bottom:3em;
+	//margin:10px auto;
+}
+.pageafterheadercontent {
+	position:relative;
+	//margin:10px auto;
+}
+.wrapper {
+		max-width:960px;
+		margin:auto;
+		clear:both;
+}
+.allelements {
+//background-color:#fff;
+}
+/* DEFAULT CONTENT FORMAT FOR SEARCH AND ARCHIVE ETC */
+.defaultpage {
+	width:590px;
+	position:relative;
+	background-color:#f2f2f2;
+	//background-color:#fff;
+	float:right;
+	border-radius:10px;
+	left:-35px;
+}
+.page-header {
+	font-size:15px;
+	padding:20px;
+}
+.page-title {
+margin:0;
+}
+.defaultpagecontent {
+margin-top:10px;
+	padding:10px;
+border-style:solid;
+border-width:1px;
+border-color:#ccc;
+border-radius:10px;
+}
+.entry-header {
+	display:flex;
+	align-items:center;
+}
+.entry-title {
+	margin:0;
+	padding:20px;
+	color:blue;
+	font-size:15px;
+	font-weight:800;
+}
+.entry-meta {
+	//display:inline-block;
+	float:right;
+	margin:0 0 0 20px;
+	font-size:10px;
+}
+.entry-content p {
+margin:0;
+padding-top:10px;
+padding-bottom:10px;
+}
+.entry-summary p {
+margin:0;
+padding-top:10px;
+padding-bottom:10px;
+}
+.entry-meta-footer {
+	font-size:10px;
+	padding:0 0 0 20px;
+}
+.edit-link a {
+font-size:12px;
+text-decoration:none;
+float:right;
+padding-right:20px;
+}
+/* HOME PAGE AND CLIMBING AREAS LIST PAGE */
+.homepage{
+	width:590px;
+	position:relative;
+	background-color:#f2f2f2;
+	//background-color:#fff;
+	float:right;
+	border-radius:10px;
+	left:-35px;
+}
+.homepage-header {
+	padding:20px;
+}
+.homepage-header h1 {
+	font-size:20px;
+	color:#424242;
+}
+.homepage p {
+	margin:0;
+	padding:0 20px 10px 20px;
+}
+/* CLIMBING AREA PAGE */
+
+.climbingareapage {
+	width:590px;
+	position:relative;
+	//background-color:#f2f2f2;
+	//background-color:#fff;
+	float:right;
+	border-radius:10px;
+	left:-35px;
+}
+.climbingareapage-header {
+			background-color:#f2f2f2;
+			border-style:solid;
+			border-width:1px;
+			border-color:#ccc;
+			border-radius:10px;
+			position:relative;
+			float:left;
+			margin:0 auto;
+			//left:25px;
+			//z-index:1;
+			//padding:50px;
+}
+.climbingareapage-img {
+		position:relative;
+		border-top-left-radius:10px;
+		border-top-right-radius:10px;
+		padding:10px 10px 0 10px;
+}
+.climbingareapage-header h1 {
+			font-size:25px;
+			font-weight:300;
+			//color:#dddddd;
+			text-transform: uppercase;
+			margin:0 10px 10px 10px;
+			padding:10px;
+			//background-color:orange;
+			//background-color:#0084b4;
+			//background-color:#27addd;
+			//background-color:#80cc99;
+			border-radius:10px;
+}
+
+.climbingareapage-areainfo {
+				margin:10px 0 0 0;
+				//float:left;
+				font-size:15px;
+				//color:#dddddd;
+				background-color:#f2f2f2;
+				border-style:solid;
+			border-width:1px;
+			border-color:#ccc;
+				border-radius:10px;
+				display:inline-block;
+				width:590px;
+}
+.climbingareapage-areainfo-about {
+	padding:10px 20px 10px 20px;
+}
+.climbingareapage-areainfo-about h1 {
+	font-size:15px;
+	font-weight:800;
+	color:#036386;
+}
+.climbingareapage-areainfo p{
+	padding:10px 0 0 0;
+	//width:570px;
+}
+
+.climbingareapage-boulderlisting {
+	position:relative;
+	border-radius:5px 5px 5px 5px;
+	padding:0 0 0 20px;
+	display:inline-block;
+	width:570px;
+}
+.climbingareapage-boulderlist {
+	position:relative;
+	padding:20px 0 0 0;
+	display:inline-block;
+	width:570px;
+}
+.climbingareapage-bouldermeta {
+	position:relative;
+	width:530px;
+	//height:100px;
+	border-style:solid;
+	border-width:1px;
+	border-radius:5px;
+	border-color:#e6e6e6;
+	margin:0 auto;
+	padding:10px;
+	//display:inline-block;
+	display:flex;
+	align-items:center;
+	float:left;
+}
+.bouldermeta-img {
+	position:relative;
+	float:left;
+	padding:0 0 0 20px;
+	//border-style:solid;
+	border-radius:5px 5px 5px 5px;
+	//border-width:1px;
+	//border-color:#d7d7d7;
+}
+.bouldermeta-namelistroutes {
+	padding:0 0 0 30px;
+	display:inline-block;
+}
+.bouldermeta-namelistroutes a {
+	text-decoration:none;
+	color:#036386;
+}
+.bouldermeta-namelistroutes .bouldermeta-listroutes {
+	position:relative;
+	float:left;
+	//color:blue;
+	font-size:12px;
+	padding:5px 0 0 0;
+	color:#a4a4a4;
+}
+	
+/* BOULDER PAGE */
+
+.boulderpage {
+	width:590px;
+	position:relative;
+	//background-color:#f2f2f2;
+	//background-color:#fff;
+	float:right;
+	border-radius:10px;
+	left:-35px;
+}
+.boulderpage-header {
+			background-color:#f2f2f2;
+			margin: 0 auto;
+			position:relative;
+			float:left;
+			border-radius:10px;
+			border-style:solid;
+			border-width:1px;
+			border-color:#ccc;
+}
+.boulderpage-img {
+		position:relative;
+		border-top-left-radius:10px;
+		border-top-right-radius:10px;
+		padding:10px 10px 0 10px;
+		border-radius:10px;
+}
+
+.boulderpage-header h1 {
+			font-size:25px;
+			font-weight:300;
+			text-transform: uppercase;
+			margin:0 10px 10px 10px;
+			padding:10px;
+			background-color:orange;
+			border-radius:10px;
+}
+.boulderpage-boulderinfo {
+				width:590px;
+				margin:10px auto;
+				float:left;
+				font-size:15px;
+				//color:#dddddd;
+				background-color:#f2f2f2;
+				border-radius:10px;
+			border-style:solid;
+			border-width:1px;
+			border-color:#ccc;
+
+}
+.boulderpage-routelist {
+	position:relative;
+}
+.boulderpage-routemeta {
+	position:relative;
+	padding:10px;
+	height:20px;
+	border-style:solid;
+	border-width:2px;
+	border-radius:5px;
+	border-color:#d7d7d7;
+	margin:10px;
+	display:flex;
+	align-items:center;
+}
+.routemeta-name {
+	position:relative;
+	font-size:15px;
+	padding:0 0 0 30px;
+	color:#036386;
+	font-weight:700;
+}
+.routeinfo-details {
+	position:relative;
+	font-size:15px;
+	//display:inline-block;
+padding:0 0 0 30px;
+	//padding:0 auto;
+	//align-items:center;
+}
+
+/* ROUTE PAGE */
+
+.routeinfopage {
+	width:590px;
+	position:relative;
+	//background-color:#f2f2f2;
+	//background-color:#fff;
+	float:right;
+	border-radius:10px;
+	left:-35px;
+}
+.routeinfopage .routeinfopage-header {
+	position:relative;
+	height:100%;
+	padding:10px 10px 10px 10px;
+	//margin:10px;
+	background-color:#f2f2f2;
+	border-radius:10px;
+	border-style:solid;
+			border-width:1px;
+			border-color:#ccc;
+}
+.routeinfopage-routemeta {
+	position:relative;
+	display:flex;
+	align-items:center;
+	//display:inline-block;
+	padding:10px 10px 10px 10px;
+	//background-color:#f2f2f2;
+	background-color:orange;
+	border-radius:10px;
+}
+.routeinfopage-title {
+	font-size:20px;
+	font-weight:800;
+	//font-family:comic;
+	margin:0 0 0 20px;
+	float:left;
+	text-transform:uppercase;
+	//color:#fff; //for testing loop
+}
+.routeno {
+	border-radius:50%;
+	width:20px;
+	height:20px;
+	font-size:15px;
+	//padding:0 0 0 20px;
+	background:#2e2e2e;
+	text-align:center;
+	font-weight:600;
+	color:#fff;
+	float:left;
+}
+.grade {
+	font-size:20px;
+	font-weight:300;
+	margin:0 0 0 20px;
+	float:left;
+	//top:10px;
+}
+.routeinfopage-routemeta-entry-meta {
+	display:none;
+	font-size:10px;
+	float:right;
+	padding:0 0 0 100px;
+}
+.routeinfopage-content {
+	position:relative;
+	background-color:#f2f2f2;
+	margin:10px auto;
+	padding:10px 0 10px 0;
+	border-radius:10px;
+	border-style:solid;
+			border-width:1px;
+			border-color:#ccc;
+}
+.routeinfopage-description {
+	padding:10px 10px 10px 10px;
+	margin:0 10px 0 10px;
+	position:relative;
+	border-radius:10px;
+	background-color:#d6ffad;
+}
+.routeinfopage-description p {
+	padding:0;
+}
+.routeinfopage-descriptionicons {
+	position:relative;
+	padding:10px 0 0 0;
+	//display:flex;
+	//align-items:center;
+} 
+.firstascent {
+	font-size:15px;
+	display:inline-block;
+	float:right;
+	//margin:0 0 0 20px;
+	//float:left;
+}
+.locationmap {
+	position:relative;
+	display:inline-block;
+	//margin:0 0 0 20px;
+	font-size:10px;
+	float:right;
+}
+.social {
+	margin:10px;
+	font-size:10px;
+	position:relative;
+	background-color:#00bfff;
+	border-radius:10px;
+}
+.routeinfopage-footer-entry-meta {
+font-size:10px;
+padding-left:20px;
+}
+/* SIDEBAR LEFT */	
+
+.dashboard {
+	width:290px;
+	float:left;
+	//background-color:#ffffff;
+	//margin:10px 0 0 0;
+	//padding:10px 0 0 10px;
+	font-size:15px;
+	position:relative;
+	left:35px;
+	border-radius:10px;
+}
+#dashboard-search {
+	color:#424242;
+	//background-color:#f79f81;
+	//background-color:#f2f2f2;
+		background-color:#ebd699;
+	padding:10px;
+	border-style:solid;
+	border-width:1px;
+	border-color:#ccc;
+	border-radius:10px;
+}
+.field {
+	border-radius:10px;
+	border-style:solid;
+	border-color:#d7d7d7;
+	width:200px;
+	height:25px;
+}
+.submit {
+	font-weight:700;
+	background-color:#cc0066;
+	border-style:none;
+	width:60px;
+	height:25px;
+	border-radius:10px;
+	//display:none;
+}
+.signuplogin {
+	position:relative;
+	padding:20px;
+	background-color:#222222;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	font-weight:bold;
+	color:#ffffff;
+
+}
+.spotlight {
+	position:relative;
+}
+.spotlight h1 {
+	background-color:#fff;
+	font-size:20px;
+	font-weight:600;
+	padding:10px;
+	border-radius:5px;
+	margin:10px auto;
+	display:inline-block;	
+}
+.climbingroutesarchive {
+	position:relative;
+	margin:10px auto;
+	border-style:solid;
+	border-width:1px;
+	border-color:#ccc;
+	border-radius:10px;
+}
+.climbingroutesarchive h1 {
+	background-color:#f2f2f2;
+	//background-color:#acfa58;
+	//background-color:#ebd699;
+	font-size:20px;
+	font-weight:700;
+	margin-top:0;
+	margin-bottom:0;
+	padding:10px;
+	border-radius:10px;	
+}
+.menu-climbingroutesarchive-container {
+	background-color:#f2f2f2;
+	//background-color:#acfa58;
+//background-color:#ebd699;
+	border-radius:10px;	
+	//border-style:solid;
+	//		border-width:1px;
+	//		border-color:#ccc;
+}
+.mainlist {
+	margin:2px 0 2px 0;
+	padding:5px 10px 10px 10px;
+	list-style:none;
+	line-height:30px;
+}
+.mainlist li {
+	padding:5px 0 0 0;
+	position:relative;
+}
+.mainlist li a {
+	text-decoration:none;
+	display:block;
+	font-weight:800;
+	color:#036386;
+	border-style:solid;
+	border-width:1px;
+	border-color:#d7d7d7;
+	border-radius:10px;
+	padding:0 0 0 10px;
+}
+.mainlist li > a:after {
+	color:#36386;
+	content:'>';
+	float:right;
+	padding-right:15px;
+}
+.mainlist li a:hover {
+	background-color:orange;
+}
+.mainlist li ul a {
+	display:block;
+}
+.mainlist li:hover > ul.sub-menu {
+	display:block;
+}
+.sub-menu {
+	list-style:none;
+	z-index:20;
+	width:200px;
+	position:absolute;
+	display:none;
+	top:5px;
+	left:200px;
+	//background-color:#acfa58;
+	background-color:#fff;
+	border-radius:10px;
+	padding:5px 10px 10px 10px;
+}
+ul.sub-menu li > a:after {
+	content:"";
+}
+
+/* SITE FOOTER http://www.lwis.net/journal/2008/02/08/pure-css-sticky-footer/ */
+
+.site-footer {
+		background-color:#ffffff;
+		position:relative;
+		font-size:15px;
+		clear:both;
+		z-index:10;
+		height:3em;
+		margin-top:-3em;
+}
+/* SIGN UP BUTTON */
+
+a.signupbutton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #caefab;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #caefab;
+	box-shadow:inset 0px 1px 0px 0px #caefab;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #77d42a), color-stop(1, #5cb811) );
+	background:-moz-linear-gradient( center top, #77d42a 5%, #5cb811 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77d42a', endColorstr='#5cb811');
+	background-color:#77d42a;
+	-webkit-border-top-left-radius:20px;
+	-moz-border-radius-topleft:20px;
+	border-top-left-radius:20px;
+	-webkit-border-top-right-radius:20px;
+	-moz-border-radius-topright:20px;
+	border-top-right-radius:20px;
+	-webkit-border-bottom-right-radius:20px;
+	-moz-border-radius-bottomright:20px;
+	border-bottom-right-radius:20px;
+	-webkit-border-bottom-left-radius:20px;
+	-moz-border-radius-bottomleft:20px;
+	border-bottom-left-radius:20px;
+	text-indent:0;
+	border:1px solid #268a16;
+	display:inline-block;
+	color:#306108;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:30px;
+	line-height:30px;
+	width:74px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #aade7c;
+}
+a.signupbutton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5cb811), color-stop(1, #77d42a) );
+	background:-moz-linear-gradient( center top, #5cb811 5%, #77d42a 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811', endColorstr='#77d42a');
+	background-color:#5cb811;
+}.signupbutton:active {
+	position:relative;
+	top:1px;
+}
+/* This button was generated using CSSButtonGenerator.com */
+
+/* COMMENTS */
+.commenting{
+	width:590px;
+}
+.comments-area {
+	margin:20px auto;
+	width:570px;
+}
+.comment-list {
+width:570px;
+padding:0;
+}
+.comment-list li {
+border-style:solid;
+//border-left:solid;
+//border-right:solid;
+border-width:1px;
+border-color:#d7d7d7;
+border-radius:5px;
+padding-top:10px;
+}
+.comment-author.vcard {
+float:left;
+padding-left:10px;
+}
+.comment-author.vcard img{
+float:left;
+}
+.fn a {
+font-size:15px;
+font-weight:700;
+padding-left:10px;
+text-decoration:none;
+font-style:normal;
+}
+.says {
+display:none;
+padding-left:5px;
+font-size:15px;
+}
+.comment-meta.commentmetadata {
+font-size:10px;
+float:right;
+padding-right:10px;
+}
+.comment-meta.commentmetadata a {
+text-decoration:none;
+color:#9999ff;
+}
+.comment-meta.commentmetadata a:hover {
+color:#6600ff;
+}
+.comment-body p {
+margin:0;
+padding:40px 0 0 45px;
+}
+.reply a {
+font-size:10px;
+text-decoration:none;
+padding-left:10px;
+}
+.comment-respond {
+	background-color:orange;
+}
+.comment-reply-title {
+	width:100px;
+	font-size:12px;
+	padding:10px;
+	margin:0;
+	float:left;
+	//display:flex;
+}
+.logged-in-as {
+	float:right;
+	font-size:10px;
+	padding-top:10px;
+	padding-right:10px;
+}
+label[for=comment] {
+	display:none;
+}
+textarea#comment {
+	width:540px;
+	height:50px;
+	margin-left:10px;
+	border-radius:10px;
+}
+.form-allowed-tags {
+font-size:10px;
+padding-left:10px;
+padding-right:10px;
+line-height:12px;
+}
+.form-submit {
+margin:0;
+}
+.testbutton {
+	background-color: #222222;
+}
+#testoverlay {
+	//display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+opacity: 0.5;   /*supported by current Mozilla, Safari, and Opera*/
+	background-color:#000000;
+	//background-color:rgba(0,0,0,0.5);
+	z-index:10;
+}
+
+/* BUDDYPRESS */
+.memberspage {
+padding:20px;
+}
