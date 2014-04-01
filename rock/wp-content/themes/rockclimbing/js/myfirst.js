@@ -1,7 +1,3 @@
-
-<script>
-function myfirst()
-{
+function myfirst() {
 document.getElementById("demo").innerHTML= Date();
 }
-</script>

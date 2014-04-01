@@ -60,13 +60,14 @@ echo " | $site_description";
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-
+<?php wp_enqueue_script('jquery'); ?>
 <?php //javascript file to enable old versions of ie to recognise html5. ?>
 
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
-
+<?php comments_popup_script(); ?>
+<script src="<?php echo get_template_directory_uri(); ?>/js/custom_script.js" type="text/javascript"></script>
 
 <?php //required hook for wp plugins.?>
 
@@ -77,36 +78,52 @@ echo " | $site_description";
 
 <?php //body tag for our theme ?>
 
-<?php //<body <?php body_class(); ?> style="background-image:url(http://localhost/alright/wp-content/uploads/2014/01/Turahalli.jpg);background-attachment:fixed;background-color:#143058;"> ?>
+<body <?php body_class(); ?> style="background-image:url(http://localhost/turahalliguide/wp-content/uploads/2014/03/sunset.jpg);background-attachment:fixed;opacity:1;background-color:#143058;">
 
-<body <?php body_class(); ?> style="background-color:#fff;">
+<div id="bgdimg">
+</div><!---.bgdimg--->
+
+<body <?php body_class(); ?> >
 
 <div id="page" class="hfeed site"> 
 
 <div id="rockclimbingheader" class="rockclimbing-header">
-<div class="rockclimbing-header-wrapper">
+
+<div class="rockclimbing-header-elements">
+
+	<div id="rockclimbing-header-routesmenu">
+
+<a href="#" onmouseover="return openroutesmenu()" title="Climbing Routes by Area"><img src="'.get_template_directory_uri().'/images/menu.jpg" width="40" height="40"></a>
+	</div><!---.rockclimbing-header-routesmenu---->
+
+      <div id="rchrm" class="climbingroutesarchive" style="display:none">
+	<?php //<h1>Climbing Routes Archive</h1> ?>
+<?php wp_nav_menu( array(
+	 'theme_location' => 'climbingroutesarchive',
+	     'menu_class' => 'mainlist',
+	  ) ); ?> 
+       </div><!---.climbingroutesarchive--->
+
 	<h1>
-<a href="http://localhost/alright/" title="Turahalli Guide" rel="home">Turahalli Guide</a>
-		</h1>
+<a href="<?php bloginfo('url'); ?>" title="Turahalli Guide" rel="home">Turahalli Guide</a>
+	</h1>
 
-<?php //<a href="#" class="signupbutton">sign up</a> ?>
-<?php //<button type="button">Sign Up</button> ?>
+<div id="header-search">     
+		<?php //get_search_form(); ?>
+	</div>
 
-<ul id="rockclimbing-header-menu">
+	<ul id="rockclimbing-header-menu">
 
 	<?php wp_nav_menu( array( 
 'theme_location' => 'siteheadermenu',
     'menu_class' => 'siteheadermenu-main',
 	 ) ); ?>    
 	
-</ul>	
- 
-<div id="header-search">     
-		<?php //get_search_form(); ?>
-</div>
+	</ul>	
+	
+</div><!----.rockclimbing-header-elements---->
 
-</div><!------------rockclimbing-header-wrapper--------->
-</div><!------------rockclimbing-header----------->
+</div><!------------.rockclimbing-header----------->
 <div class="pagecontainer">
 
 

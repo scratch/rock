@@ -1,0 +1,3 @@
+$('.commentclick').('click', function() {
+	$(this).next('.trying').show();
+})

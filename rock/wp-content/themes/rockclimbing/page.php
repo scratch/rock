@@ -10,24 +10,36 @@
  * @package rockclimbing
  * @since rockclimbing 1.0
  */
- 
-get_header(); ?>
-<div id="pageafterheader" class="pageafterheadercontent">
-
+?> 
 <div class="wrapper">
+
+<?php get_header(); ?>
+<div id="pageafterheader" class="pageafterheadercontent">
  
 <div class="allelements">
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 
     <?php while ( have_posts() ) : the_post(); ?>
  
      <?php get_template_part( 'content', 'page' ); ?>
 
     <?php endwhile; // end of the loop. ?>
+<!-----------------
+<div class="pagenav">
+   <div class="nav-previous alignleft">
+      <?php next_posts_link( 'Older posts' ); ?>
+<
+   </div>
+   <div class="nav-next alignright">
+       <?php previous_posts_link( 'Newer posts' ); ?>
+new
+   </div>
+</div><!------pagenav---------------->
+
 
 </div><!--- .allelements---->
-</div><!-- .wrapper -->
+<?php get_footer(); ?>
 
 </div><!-- #pageafterheader .pageafterheadercontent -->
- 
-<?php get_footer(); ?>
+
+</div><!-- .wrapper -->

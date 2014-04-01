@@ -11,8 +11,16 @@
     
 <header class="entry-header">
   
-<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'rockclimbing' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf(__( 'Permalink to %s', 'rockclimbing' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
  
+<?php $postid = get_the_ID();?>
+<?php $result = mysql_query("SELECT meta_value FROM wp_postmeta WHERE meta_key='grade' AND post_id='$postid'"); ?>
+<?php while ($g = mysql_fetch_assoc($result)) { ?>
+<div class="grade">
+	<?php echo $g['meta_value']?>
+</div>
+<?php } ?> 
+
         <?php if ( 'post' == get_post_type() ) : ?>
         <div class="entry-meta">
             <?php rockclimbing_posted_on(); ?>

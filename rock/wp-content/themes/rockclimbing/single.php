@@ -5,17 +5,16 @@
  * @package rockclimbing
  * @since rockclimbing 1.0
  */
- 
-get_header(); ?>
- 
-<div id="pageafterheader" class="pageafterheadercontent">
+ ?>
 
 <div class="wrapper">
+
+<?php get_header(); ?>
+ 
+<div id="pageafterheader" class="pageafterheadercontent">
  
 <div class="allelements">
-<?php get_sidebar(); ?>
-
-<?php //<input type="button" class="signupbutton" onclick="alert('Welcome!')"> ?>
+<?php //get_sidebar(); ?>
     
   <?php while ( have_posts() ) : the_post(); ?>
  
@@ -28,8 +27,8 @@ get_header(); ?>
    <?php endwhile; // end of the loop. ?>
 
 </div><!--- .allelements---->
-</div><!-- .wrapper -->
+<?php get_footer(); ?>
 
 </div><!-- #pageafterheader .pageafterheadercontent -->
- 
-<?php get_footer(); ?>
+</div><!-- .wrapper -->
+

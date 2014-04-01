@@ -1,3 +1,3 @@
-    <script type="text/javascript">
-function opencommentform() {var Date()=document.getElementById('commentlink').innerHTML;}
-</script>
+function opencommentform() {
+document.getElementById("commentlink").innerHTML=comment_form();
+}

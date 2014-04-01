@@ -21,6 +21,23 @@ if ( post_password_required() ) {
 <div id="comments" class="comments-area">
 
 	<?php if ( have_comments() ) : ?>
+<a href= "#" onclick="return opencommentform()">Comments</a>
+
+<div id="commentform" style="display:none;">
+
+<?php comment_form( array(
+			'title_reply' => __( 'Comment' ),
+              'comment_field' =>  '<div class="commentform-textarea"><label for="comment">' . _x( 'Comment', 'noun' ) .
+    '</label><textarea id="comment" name="comment" cols="60" rows="4" aria-required="true">' .
+    '</textarea></div>',
+              'logged_in_as' => '<div class="logged-in-as">' .
+    sprintf(__( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ),
+      admin_url( 'profile.php' ),
+      $user_identity,
+      wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
+    ) . '</div>',
+        )); ?>
+</div><!--------commentform------------>
 
 	<h2 class="comments-title">
 		<?php
@@ -41,10 +58,11 @@ if ( post_password_required() ) {
 			wp_list_comments( array(
 				'style'      => 'ol',
 				'short_ping' => true,
-				'avatar_size'=> 34,
+				'avatar_size'=> 40,
 		     'reverse_top_level'=> true,
 			) );
 		?>
+
 	</ol><!-- .comment-list -->
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
@@ -60,21 +78,5 @@ if ( post_password_required() ) {
 	<?php endif; ?>
 
 	<?php endif; // have_comments() ?>
-
-	<?php comment_form( array(
-			'title_reply' => __( 'Comment' ),
-              'comment_field' =>  '<div class="commentform-textarea"><label for="comment">' . _x( 'Comment', 'noun' ) .
-    '</label><textarea id="comment" name="comment" cols="60" rows="4" aria-required="true">' .
-    '</textarea></div>',
-               'logged_in_as' => '<div class="logged-in-as">' .
-    sprintf(__( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ),
-      admin_url( 'profile.php' ),
-      $user_identity,
-      wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
-    ) . '</div>',
-        'comment_notes_after' => '<div class="form-allowed-tags">' .sprintf(__( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ),
-      ' <code>' . allowed_tags() . '</code>'
-    ) . '</div>',
-)); ?>
 
 </div><!-- #comments -->

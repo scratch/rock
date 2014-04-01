@@ -55,6 +55,15 @@ load_theme_textdomain( 'rockclimbing', get_template_directory() . '/languages' )
 add_theme_support( 'automatic-feed-links' );
 add_theme_support ('post-thumbnails');
  
+if (class_exists('MultiPostThumbnails')) {
+
+	new MultiPostThumbnails(array(
+			'label' => 'Secondary Image',
+			'id' => 'secondary-image',
+			'post_type' => 'post'
+ ) );
+ }
+
 add_post_type_support ( 'article', 'post-formats' );
 
     /**
@@ -124,12 +133,7 @@ wp_enqueue_script(
 	get_stylesheet_directory_uri() . '/js/custom_script.js',
 		array( 'jquery' )
 	);
- wp_enqueue_script(
-		'opencommentform',
-	get_stylesheet_directory_uri() . '/js/opencommentform.js',
-		array( 'jquery' )
-	);
-
+ 
 //loading comment-reply.js if we’re on a single post or page, comments are open, and threaded comments are enabled.
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );

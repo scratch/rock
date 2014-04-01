@@ -2,25 +2,29 @@
 /*
 Template Name: climbingarea
 */
-
-get_header(); ?>
-
-<div id="pageafterheader" class="pageafterheadercontent">
+?>
 
 <div class="wrapper">
+
+<?php get_header(); ?>
+
+<div id="pageafterheader" class="pageafterheadercontent">
  
 <div class="allelements">
-<?php get_sidebar(); ?>
- 	
+<?php //get_sidebar(); ?>
+ 	<?php
+global $more;
+$more=0;
+?>
      <?php while ( have_posts() ) : the_post(); ?>
  
-         <?php get_template_part( 'content', 'climbingarea' ); ?>
+      <?php get_template_part( 'content', 'climbingarea' ); ?>
  
                 <?php endwhile; // end of the loop. ?>
 
 </div><!--- .allelements---->
-</div><!-- .wrapper -->
+<?php get_footer(); ?>
 
 </div><!-- #pageafterheader .pageafterheadercontent -->
  
-<?php get_footer(); ?>
+</div><!-- .wrapper -->

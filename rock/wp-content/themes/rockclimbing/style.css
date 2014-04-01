@@ -103,6 +103,7 @@ body {
 	line-height:22px;
 	color:#444444;
 	height:100%;
+//text-align:center;
 }
 p {
 	display:block;
@@ -119,47 +120,98 @@ padding-left:400px;
 .nav-previous a {
 font-size:10px;
 }
+img.attachment-post-thumbnail {
+border-radius:10px;
+}
+img.attachment-post-thumbnail.wp-post-image {
+border-radius:10px;
+}
+
 /* SITE HEADER */
 
 .rockclimbing-header {
 			height:100px;
-			width:100%;
-			//background-color:#244902;
-			background: #f2f2f2;
-			//text-align:center;
-			padding-left:20px;
 			position:fixed;
-			top:0px;
-			margin:0px auto;
-			text-transform:uppercase;
 			z-index:1000;
-			border-bottom:solid;
+top:0px;
+			}
+.rockclimbing-header-elements {	
+//background-color:#996633;
+background:#fff;
+position:absolute;
+margin-left:auto;
+margin-right:auto;
+padding:0;
+text-transform:uppercase;
+border-bottom:solid;
 			border-width:1px;
 			border-color:#ccc;
+width:1100px;
+height:100px;
 }
 .rockclimbing-header h1 {
-	width:300px;
+	width:250px;
 	float:left;
-	padding-top:50px;
+	margin-top:60px;
+margin-left:20px;
 }
 .rockclimbing-header h1 a {
-			font-family:Helvetica,Arial,sans-serif;
+font-family:comic sans MS;
+			//font-family:Helvetica,Arial,sans-serif;
 			font-size:25px;
 			font-weight:600;
 			text-decoration:none;
 			display:block;
 			width:300px;
 			color:#424242;
+//color:#fff;
+}
+#rockclimbing-header-routesmenu {
+//background:#fff;
+display:block;
+//width:50px;
+}
+#rockclimbing-header-routesmenu a {
+display:block;
+width:50px;
+height:50px;
+background:#fff;
+margin-top:50px;
+padding-left:10px;
+float:left;
+}
+#rchrm.climbingroutesarchive {
+position:absolute;
+margin-top:100px;
+width:290px;
+}
+#rchrm.climbingroutesarchive li a {
+text-transform:lowercase;
+font-size:10px;
+}
+#header-search {
+padding-top:50px;
+float:left;
+}
+#header-search .submit {
+	font-weight:700;
+	background-color:transparent;
+	border-style:none;
+	width:25px;
+	height:25px;
+	border-radius:10px;
 }
 ul#rockclimbing-header-menu {
-	position: absolute;
+	//position: absolute;
 	display:inline-block;
-	margin: 0;
+	margin-top: 55px;
+	float:right;
+	padding-right:50px;
 	//padding: 20px 0 0;
 	min-width: 200px;
 	max-width: 75%;
-	//background: #244902;
-	background: #f2f2f2;
+	background:transparent;
+	//background: #f2f2f2;
 	list-style: none;
 	text-align: left;
 	-webkit-transition: left 0.3s;
@@ -169,26 +221,29 @@ ul#rockclimbing-header-menu {
 	transition: left 0.3s;
 	z-index: 1;
 	}
+.menu-siteheadermenu-container {
+	//float:right;
+}
 .siteheadermenu-main {
 				position:relative;
 				list-style-type:none;
-				float:left;
+				//float:left;
 				display:flex;
-				padding-top:55px;
+				//margin-top:55px;
 }
 .siteheadermenu-main li {
-
+display:inline;
+position:relative;
 }
 .siteheadermenu-main li a {
-		font-family:Helvetica,Arial;
+		font-family:comic sans MS,Helvetica,Arial;
 		font-weight:700;
 		display:block;
 		line-height:34px;
 		padding:0 6px;
 		margin:0 4px;
 		font-size:13px;
-		//color:#ddd;
-		//color:#a4a4a4;
+		//color:#fff;
 		color:#424242;
 		height:40px;
 		float:left;
@@ -198,21 +253,49 @@ ul#rockclimbing-header-menu {
 .siteheadermenu-main li a:hover {
 	color:#009933;
 }
-.sub-menu {
-	//display:none;
-	//min-width:0;
-	//background:#444444;
-	//margin-top:-1px;
-	//border:#444 solid 1px;
-	//border-top:0;
-	//position:static;
-	//padding:0;
+.siteheadermenu-main li ul.sub-menu li {
+float:none;
 }
+.siteheadermenu-main li ul.sub-menu li a {
+float:none;
+	display:block;
+line-height:25px;
+//border-style:solid;
+//border-radius:1px;
+height:100%;
+}
+.siteheadermenu-main li:hover > ul.sub-menu {
+	display:inline-block;
+}
+ul.siteheadermenu-main ul.sub-menu {
+	list-style:none;
+	z-index:0;
+	position:absolute;
+	display:none;
+	margin-top:25px;
+	left:0;
+width:100%;
+	background-color:#f2f2f2;
+	border-radius:0;
+}
+/* BACKGROUND IMAGE OVERLAY OPACITY */
+#bgdimg {
+	content : "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+//background-color:#444;
+    width: 100%;
+    height: 100%;
+    opacity : 0.5;
+}
+
 /* PAGE CONTAINER */
 
 .pagecontainer {
 	height:100%;
-	margin:60px 0 5px 0;
+	margin:70px 0 10px 0;
 }
 
 /* PAGE AFTER HEADER */
@@ -226,22 +309,111 @@ ul#rockclimbing-header-menu {
 	//margin:10px auto;
 }
 .wrapper {
-		max-width:960px;
+		max-width:1100px;
+//width:100%;
 		margin:auto;
 		clear:both;
+background:url(http://localhost/turahalliguide/wp-content/uploads/2014/03/bg.jpg);
 }
 .allelements {
-//background-color:#fff;
+display:flex;
+margin-bottom:10px;
+background:#fff;
+}
+.pageheader-menu {
+padding-left:50px;
+padding-top:10px;
+position:relative;
+}
+.pageheader-menu h2 {
+font-size:12px;
+font-family:comic sans MS;
+text-transform:uppercase;
+color:#036386;
+float:right;
+padding-right:10px;
+}
+.addnewboulder, .addnewroute, .pageheader-photos, .pageheader-videos, .pageheader-commenting, .pageheader-locationmap {
+width:500;
+height:100px;
+border-style:solid;
+border-width:1px;
+border-color:#ccc;
+border-radius:10px;
+margin-top:10px;
+}
+.pageheader-menu img {
+padding-left:10px;
+}
+.addlink, .aboutmap {
+font-size:10px;
+color:#036386;
+float:right;
+padding-left:10px;
+}
+.addlink:before {
+content:'+';
+}
+.aboutmap:before {
+content:'#';
+}
+.boulderrating {
+font-size:10px;
+color:#036386;
+float:right;
+top:10px;
+margin-left:10px;
+height:20px;
 }
 /* DEFAULT CONTENT FORMAT FOR SEARCH AND ARCHIVE ETC */
+.defaultpage-mainone, .defaultpage-maintwo {
+width:525px;
+float:left;
+background:#fff;
+border-left:solid;
+border-right:solid;
+border-width:1px;
+border-color:#ccc;
+border-radius:10px;
+margin:10px;
+}
+.defaultpage-mainone {
+margin-right:0;
+}
+.defaultpage-maintwo {
+margin-left:0;
+}
+.defaultpage-header {
+	padding:20px;
+}
+.defaultpage-header h1 {
+	font-size:20px;
+	color:#424242;
+}
+.defaultpage-content {
+padding:40px;
+font-size:15px;
+}
+.defaultpage-content p {
+	display:none;
+}
+.defaultpage-mainone .defaultpage-content .content-two, .defaultpage-maintwo .defaultpage-content .content-one, .defaultpage-maintwo .defaultpage-header   {
+display:none;
+}
+.content-one ul li a {
+text-decoration:none;
+color:#036386;
+}
+.reefknot img {
+margin-top:300px;
+z-index:50;
+}
 .defaultpage {
 	width:590px;
 	position:relative;
-	background-color:#f2f2f2;
 	//background-color:#fff;
 	float:right;
 	border-radius:10px;
-	left:-35px;
 }
 .page-header {
 	font-size:15px;
@@ -295,15 +467,29 @@ text-decoration:none;
 float:right;
 padding-right:20px;
 }
-/* HOME PAGE AND CLIMBING AREAS LIST PAGE */
+/* HOME PAGE */
 .homepage{
-	width:590px;
+width:100%;
+display:flex;
 	position:relative;
-	background-color:#f2f2f2;
-	//background-color:#fff;
-	float:right;
+/kground:url(http://localhost/turahalliguide/wp-content/uploads/2014/03/headerbimg.jpg);
+	background:transparent;
 	border-radius:10px;
-	left:-35px;
+border-style:solid;
+			border-width:1px;
+			border-color:#ccc;
+margin-bottom:10px;
+}
+.homepage-main {
+width:500px;
+float:left;
+background:#fff;
+border-left:solid;
+border-right:solid;
+border-width:1px;
+border-color:#ccc;
+border-radius:10px;
+margin:10px;
 }
 .homepage-header {
 	padding:20px;
@@ -312,74 +498,128 @@ padding-right:20px;
 	font-size:20px;
 	color:#424242;
 }
-.homepage p {
+.homepage-content {
+padding:20px;
+}
+.homepage-content p {
 	margin:0;
 	padding:0 20px 10px 20px;
+}
+.homepage-content ul li a {
+font-size:15px;
+text-decoration:none;
+color:#036386;
+}
+.leftbar, .rightbar {
+width:290px;
+position:relative;
+margin:10px 0 10px 0;
+float:left;
+}
+.leftbar {
+margin-left:10px;
+}
+.spotlight, .latestposts, .using, .climbingwiki {
+	position:relative;
+background:#fff;
+display:inline-block;
+width:280px;
+height:300px;
+overflow:auto;
+border-style:solid;
+border-width:1px;
+border-color:#d7d7d7;
+border-radius:10px;
+//box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.55);
+//-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+//-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.spotlight h1, .latestposts h1, .using h1, .climbingwiki h1 {
+	font-size:20px;
+	font-weight:300;
+	padding:10px;
+	//margin:10px auto;
+	display:inline-block;	
+color:#194719;
+}
+.spotlight h1 a {
+text-decoration:none;
+color:#194719;
+padding-left:10px;
+}
+.latestposts ul a {
+font-size:10px;
+color:#036386;
+}
+.spotlight p, .climbingwiki p {
+padding-top:0;
+margin-top:0;
 }
 /* CLIMBING AREA PAGE */
 
 .climbingareapage {
-	width:590px;
-	position:relative;
-	//background-color:#f2f2f2;
-	//background-color:#fff;
-	float:right;
-	border-radius:10px;
-	left:-35px;
+width:100%;
+position:relative;
+display:flex;
+float:left;
+margin-bottom:10px;
+border-radius:10px;
+border-style:solid;
+border-width:1px;
+border-color:#ccc;
+background-color:#f2f2f2;
 }
 .climbingareapage-header {
-			background-color:#f2f2f2;
+			width:600px;
+			background-color:#fff;
 			border-style:solid;
 			border-width:1px;
 			border-color:#ccc;
 			border-radius:10px;
 			position:relative;
 			float:left;
-			margin:0 auto;
-			//left:25px;
-			//z-index:1;
-			//padding:50px;
+			margin:10px;
 }
 .climbingareapage-img {
 		position:relative;
 		border-top-left-radius:10px;
 		border-top-right-radius:10px;
-		padding:10px 10px 0 10px;
+		padding:10px;
 }
 .climbingareapage-header h1 {
+font-family:comic sans MS;
 			font-size:25px;
-			font-weight:300;
-			//color:#dddddd;
+			//font-weight:100;
+			color:#036386;
 			text-transform: uppercase;
 			margin:0 10px 10px 10px;
 			padding:10px;
 			//background-color:orange;
-			//background-color:#0084b4;
-			//background-color:#27addd;
-			//background-color:#80cc99;
 			border-radius:10px;
 }
-
 .climbingareapage-areainfo {
-				margin:10px 0 0 0;
-				//float:left;
+				margin:10px 10px 10px 0;
+				float:left;
+				position:relative;
 				font-size:15px;
-				//color:#dddddd;
-				background-color:#f2f2f2;
+				background-color:#fff;
 				border-style:solid;
-			border-width:1px;
-			border-color:#ccc;
+				border-width:1px;
+				border-color:#ccc;
 				border-radius:10px;
-				display:inline-block;
-				width:590px;
+				width:460px;
+				//height:500px;
+				//overflow:auto;
 }
 .climbingareapage-areainfo-about {
 	padding:10px 20px 10px 20px;
 }
 .climbingareapage-areainfo-about h1 {
-	font-size:15px;
+font-family:comic sans MS;
+	font-size:20px;
 	font-weight:800;
 	color:#036386;
+//float:left;
 }
 .climbingareapage-areainfo p{
 	padding:10px 0 0 0;
@@ -389,47 +629,42 @@ padding-right:20px;
 .climbingareapage-boulderlisting {
 	position:relative;
 	border-radius:5px 5px 5px 5px;
-	padding:0 0 0 20px;
-	display:inline-block;
-	width:570px;
+	padding:0 20px 0 20px;
+	//display:inline-block;
+	width:400px;
 }
 .climbingareapage-boulderlist {
 	position:relative;
 	padding:20px 0 0 0;
 	display:inline-block;
-	width:570px;
+	//width:570px;
 }
 .climbingareapage-bouldermeta {
 	position:relative;
-	width:530px;
+	width:390px;
 	//height:100px;
-	border-style:solid;
+	border-top-style:solid;
+	border-bottom-style:solid;
 	border-width:1px;
 	border-radius:5px;
 	border-color:#e6e6e6;
 	margin:0 auto;
 	padding:10px;
-	//display:inline-block;
 	display:flex;
-	align-items:center;
+	//align-items:center;
 	float:left;
-}
-.bouldermeta-img {
-	position:relative;
-	float:left;
-	padding:0 0 0 20px;
-	//border-style:solid;
-	border-radius:5px 5px 5px 5px;
-	//border-width:1px;
-	//border-color:#d7d7d7;
 }
 .bouldermeta-namelistroutes {
 	padding:0 0 0 30px;
 	display:inline-block;
 }
 .bouldermeta-namelistroutes a {
+font-family:comic sans MS;
 	text-decoration:none;
 	color:#036386;
+}
+.bouldermeta-namelistroutes-header {
+display:flex;
 }
 .bouldermeta-namelistroutes .bouldermeta-listroutes {
 	position:relative;
@@ -443,23 +678,27 @@ padding-right:20px;
 /* BOULDER PAGE */
 
 .boulderpage {
-	width:590px;
-	position:relative;
-	//background-color:#f2f2f2;
-	//background-color:#fff;
-	float:right;
-	border-radius:10px;
-	left:-35px;
+width:100%;
+position:relative;
+display:flex;
+float:left;
+margin-bottom:10px;
+border-radius:10px;
+border-style:solid;
+border-width:1px;
+border-color:#ccc;
+background-color:#f2f2f2;
 }
 .boulderpage-header {
-			background-color:#f2f2f2;
-			margin: 0 auto;
-			position:relative;
-			float:left;
-			border-radius:10px;
+			width:600px;
+			background-color:#fff;
 			border-style:solid;
 			border-width:1px;
 			border-color:#ccc;
+			border-radius:10px;
+			position:relative;
+			float:left;
+			margin:10px;
 }
 .boulderpage-img {
 		position:relative;
@@ -470,41 +709,73 @@ padding-right:20px;
 }
 
 .boulderpage-header h1 {
-			font-size:25px;
-			font-weight:300;
-			text-transform: uppercase;
-			margin:0 10px 10px 10px;
-			padding:10px;
-			background-color:orange;
-			border-radius:10px;
+font-family:comic sans MS;
+font-size:25px;
+color:#036386;
+//font-weight:300;
+text-transform: uppercase;
+margin:0 10px 10px 10px;
+padding:10px;
+border-radius:10px;
+}
+.boulderpage-header-in {
+font-size:15px;
+padding-left:100px;
+}
+.boulderpage-header-in a {
+font-family:comic sans MS;
+text-decoration:none;
+text-transform:uppercase;
 }
 .boulderpage-boulderinfo {
-				width:590px;
-				margin:10px auto;
+				margin:10px 10px 10px 0;
 				float:left;
+				position:relative;
 				font-size:15px;
-				//color:#dddddd;
-				background-color:#f2f2f2;
+font-family:comic sans MS;
+				background-color:#fff;
+				border-style:solid;
+				border-width:1px;
+				border-color:#ccc;
 				border-radius:10px;
-			border-style:solid;
-			border-width:1px;
-			border-color:#ccc;
-
+				width:460px;
+				//height:500px;
+				//overflow:auto;
+}
+.boulderpage-routelisting {
+	position:relative;
+	border-radius:5px 5px 5px 5px;
+	padding:0 20px 0 20px;
+	//display:inline-block;
+	width:400px;
+}
+.boulderpage-boulderinfo-about {
+	padding:10px 20px 10px 20px;
+}
+.boulderpage-boulderinfo-about h1 {
+	font-size:20px;
+	font-weight:800;
+	color:#036386;
 }
 .boulderpage-routelist {
 	position:relative;
+padding-top:20px;
+display:inline-block;
 }
 .boulderpage-routemeta {
 	position:relative;
-	padding:10px;
-	height:20px;
-	border-style:solid;
-	border-width:2px;
+	//height:20px;
+	width:390px;
+	border-top-style:solid;
+	border-bottom-style:solid;
+	border-width:1px;
 	border-radius:5px;
-	border-color:#d7d7d7;
-	margin:10px;
+	border-color:#e6e6e6;
+	margin:0 auto;
+	padding:10px;
 	display:flex;
 	align-items:center;
+	float:left;
 }
 .routemeta-name {
 	position:relative;
@@ -513,7 +784,16 @@ padding-right:20px;
 	color:#036386;
 	font-weight:700;
 }
+.routemeta-name a{
+text-decoration:none;
+}
+.routemeta-name-grade {
+padding-left:20px;
+color:green;
+display:inline-block;
+}
 .routeinfo-details {
+display:none;
 	position:relative;
 	font-size:15px;
 	//display:inline-block;
@@ -524,102 +804,145 @@ padding:0 0 0 30px;
 
 /* ROUTE PAGE */
 
-.routeinfopage {
-	width:590px;
-	position:relative;
-	//background-color:#f2f2f2;
-	//background-color:#fff;
-	float:right;
-	border-radius:10px;
-	left:-35px;
+.routepage {
+width:100%;
+position:relative;
+display:flex;
+float:left;
+margin-bottom:10px;
+border-radius:10px;
+border-style:solid;
+border-width:1px;
+border-color:#ccc;
+background-color:#f2f2f2;
 }
-.routeinfopage .routeinfopage-header {
-	position:relative;
-	height:100%;
-	padding:10px 10px 10px 10px;
-	//margin:10px;
-	background-color:#f2f2f2;
-	border-radius:10px;
-	border-style:solid;
-			border-width:1px;
-			border-color:#ccc;
+.routepage-header {
+width:600px;
+background-color:#fff;
+border-style:solid;
+border-width:1px;
+border-color:#ccc;
+border-radius:10px;
+position:relative;
+float:left;
+margin:10px;
 }
-.routeinfopage-routemeta {
-	position:relative;
-	display:flex;
-	align-items:center;
-	//display:inline-block;
-	padding:10px 10px 10px 10px;
-	//background-color:#f2f2f2;
-	background-color:orange;
-	border-radius:10px;
+.routepage-img {
+		position:relative;
+		padding:10px 10px 0 10px;
 }
-.routeinfopage-title {
-	font-size:20px;
-	font-weight:800;
-	//font-family:comic;
-	margin:0 0 0 20px;
-	float:left;
-	text-transform:uppercase;
-	//color:#fff; //for testing loop
+.routepage-routemeta {
+font-family:comic sans MS;
+font-size:25px;
+font-weight:800;
+color:#036386;
+text-transform: uppercase;
+margin:10px;
+padding:10px;
+}
+.routepage-header h1 {
+font-size:25px;
 }
 .routeno {
 	border-radius:50%;
 	width:20px;
 	height:20px;
 	font-size:15px;
-	//padding:0 0 0 20px;
 	background:#2e2e2e;
 	text-align:center;
 	font-weight:600;
 	color:#fff;
 	float:left;
 }
+.routename {
+position:relative;
+float:left;
+padding-left:20px;
+//font-weight:800;
+}
 .grade {
 	font-size:20px;
-	font-weight:300;
 	margin:0 0 0 20px;
 	float:left;
+text-transform:lowercase;
 	//top:10px;
 }
-.routeinfopage-routemeta-entry-meta {
-	display:none;
+.routepage-header-in {
+font-family:comic sans MS;
+font-size:15px;
+position:relative;
+margin:20px 0 10px 50px;
+float:left;
+}
+.routepage-header-in a {
+font-family:comic sans MS;
+text-decoration:none;
+text-transform:uppercase;
+}
+.routepage .pageheader-menu {
+padding-top:50px;
+}
+.routepage-content {
+margin:10px 10px 10px 0;
+float:left;
+position:relative;
+font-size:15px;
+font-family:comic sans MS;
+background-color:#fff;
+border-style:solid;
+border-width:1px;
+border-color:#ccc;
+border-radius:10px;
+width:460px;
+//height:500px;
+//overflow:auto;
+}
+.routepage-postedon {
 	font-size:10px;
-	float:right;
-	padding:0 0 0 100px;
+	float:left;
+	overflow:hidden;
+padding:10px 10px 10px 10px;
+display:flex;
+text-transform:uppercase;
 }
-.routeinfopage-content {
-	position:relative;
-	background-color:#f2f2f2;
-	margin:10px auto;
-	padding:10px 0 10px 0;
-	border-radius:10px;
-	border-style:solid;
-			border-width:1px;
-			border-color:#ccc;
+.routepage-description {
+position:relative;
+border-radius:10px;
+margin-top:20px;
+padding:20px;
+width:400px;
 }
-.routeinfopage-description {
-	padding:10px 10px 10px 10px;
-	margin:0 10px 0 10px;
-	position:relative;
-	border-radius:10px;
-	background-color:#d6ffad;
+.rating {
+display:flex;
 }
-.routeinfopage-description p {
+.ratingheader {
+float:left;
+font-size:15px;
+font-weight:800;
+color:#036386;
+margin-top:-5px;
+}
+.routepage-description p {
 	padding:0;
 }
-.routeinfopage-descriptionicons {
+.routepage-variations {
+font-size:15px;
+position:relative;
+}
+.routepage-descriptionicons {
 	position:relative;
-	padding:10px 0 0 0;
-	//display:flex;
-	//align-items:center;
+	padding:10px 10px 0 0;
+//float:right;
 } 
 .firstascent {
 	font-size:15px;
-	display:inline-block;
-	float:right;
-	//margin:0 0 0 20px;
-	//float:left;
+margin-bottom:10px;
+}
+.ivedonethis {
+font-size:15px;
+}
+.ivedonethis img {
+//margin-top:5px;
 }
 .locationmap {
 	position:relative;
@@ -627,36 +950,51 @@ padding:0 0 0 30px;
 	//margin:0 0 0 20px;
 	font-size:10px;
 	float:right;
+	color:#58acfa;
 }
-.social {
-	margin:10px;
-	font-size:10px;
-	position:relative;
-	background-color:#00bfff;
-	border-radius:10px;
+.locationmap a {
+text-decoration:none;
+color:#58acfa;
 }
-.routeinfopage-footer-entry-meta {
+.locationmap a:hover {
+color:#036386;
+}
+.routepage-footer-entry-meta {
 font-size:10px;
 padding-left:20px;
 }
+.postgallery {
+margin:5px;
+}
 /* SIDEBAR LEFT */	
 
+#ldb {
+//background:#fff;
+display:block;
+//width:50px;
+}
+#ldb a {
+display:block;
+width:50px;
+height:50px;
+background:#f2f2f2;
+margin-top:50px;
+float:left;
+}
 .dashboard {
 	width:290px;
 	float:left;
-	//background-color:#ffffff;
-	//margin:10px 0 0 0;
-	//padding:10px 0 0 10px;
 	font-size:15px;
-	position:relative;
-	left:35px;
+	position:absolute;
 	border-radius:10px;
+background:#fff;
+z-index:20;
 }
 #dashboard-search {
 	color:#424242;
 	//background-color:#f79f81;
-	//background-color:#f2f2f2;
-		background-color:#ebd699;
+	background-color:#f2f2f2;
+		//background-color:#ebd699;
 	padding:10px;
 	border-style:solid;
 	border-width:1px;
@@ -665,18 +1003,21 @@ padding-left:20px;
 }
 .field {
 	border-radius:10px;
-	border-style:solid;
+border-top-style:none;
+border-left-style:none;
+	border-bottom-style:solid;
 	border-color:#d7d7d7;
 	width:200px;
 	height:25px;
 }
 .submit {
 	font-weight:700;
-	background-color:#cc0066;
+	background-color:transparent;
 	border-style:none;
-	width:60px;
+	width:25px;
 	height:25px;
 	border-radius:10px;
+//left:-20px;
 	//display:none;
 }
 .signuplogin {
@@ -691,35 +1032,27 @@ padding-left:20px;
 	color:#ffffff;
 
 }
-.spotlight {
-	position:relative;
-}
-.spotlight h1 {
-	background-color:#fff;
-	font-size:20px;
-	font-weight:600;
-	padding:10px;
-	border-radius:5px;
-	margin:10px auto;
-	display:inline-block;	
-}
 .climbingroutesarchive {
 	position:relative;
 	margin:10px auto;
-	border-style:solid;
-	border-width:1px;
-	border-color:#ccc;
+	//border-style:solid;
+	//border-width:1px;
+	//border-color:#ccc;
 	border-radius:10px;
 }
 .climbingroutesarchive h1 {
 	background-color:#f2f2f2;
 	//background-color:#acfa58;
 	//background-color:#ebd699;
+	color:#036386;
 	font-size:20px;
 	font-weight:700;
 	margin-top:0;
 	margin-bottom:0;
 	padding:10px;
+	border-style:solid;
+	border-width:1px;
+	border-color:#ccc;
 	border-radius:10px;	
 }
 .menu-climbingroutesarchive-container {
@@ -727,9 +1060,9 @@ padding-left:20px;
 	//background-color:#acfa58;
 //background-color:#ebd699;
 	border-radius:10px;	
-	//border-style:solid;
-	//		border-width:1px;
-	//		border-color:#ccc;
+	border-style:solid;
+			border-width:1px;
+			border-color:#ccc;
 }
 .mainlist {
 	margin:2px 0 2px 0;
@@ -787,13 +1120,34 @@ ul.sub-menu li > a:after {
 /* SITE FOOTER http://www.lwis.net/journal/2008/02/08/pure-css-sticky-footer/ */
 
 .site-footer {
-		background-color:#ffffff;
+		//background-color:#ffffff;
+background:url(http://localhost/turahalliguide/wp-content/uploads/2014/03/rocksfooter1.jpg) repeat-x left top;
 		position:relative;
 		font-size:15px;
 		clear:both;
 		z-index:10;
-		height:3em;
+		height:8em;
 		margin-top:-3em;
+border-top:solid;
+border-width:1px;
+border-color:#ccc;
+}
+.site-info {
+padding:10px 0 0 20px;
+float:left;
+}
+.site-info a {
+text-decoration:none;
+color:#036386;
+font-weight:700;
+}
+.site-info a:hover {
+color:#009933;
+}
+.footer-menu {
+float:right;
+margin:0;
+padding:20px;
 }
 /* SIGN UP BUTTON */
 
@@ -845,24 +1199,48 @@ a.signupbutton:hover {
 
 /* COMMENTS */
 .commenting{
-	width:590px;
+//width:450px;
+//height:500px;
+overflow:auto;
+float:left;
+position:relative;
+margin-top:10px;
+border-radius:10px;
+border-top-style:solid;
+border-width:1px;
+border-color:#ccc;
 }
 .comments-area {
-	margin:20px auto;
-	width:570px;
+	margin:10px auto;
+	//width:570px;
+}
+.comments-area a {
+font-size:15px;
+text-decoration:none;
+font-weight:700;
+color:#036386;
+padding-left:10px;
+}
+.comments-title {
+float:right;
+padding:0 10px 10px 0;
+margin:0;
+font-size:10px;
 }
 .comment-list {
-width:570px;
-padding:0;
+//width:570px;
+padding-left:10px;
+padding-right:10px;
 }
 .comment-list li {
-border-style:solid;
+border-top-style:solid;
+border-bottom-style:solid;
 //border-left:solid;
 //border-right:solid;
 border-width:1px;
 border-color:#d7d7d7;
 border-radius:5px;
-padding-top:10px;
+//background-color:#e5e5e5;
 }
 .comment-author.vcard {
 float:left;
@@ -874,9 +1252,13 @@ float:left;
 .fn a {
 font-size:15px;
 font-weight:700;
+color:#036386;
 padding-left:10px;
 text-decoration:none;
 font-style:normal;
+//padding-left:50px;
+//float:left;
+//display:inline-block;
 }
 .says {
 display:none;
@@ -887,25 +1269,57 @@ font-size:15px;
 font-size:10px;
 float:right;
 padding-right:10px;
+//display:inline-block;
 }
 .comment-meta.commentmetadata a {
 text-decoration:none;
 color:#9999ff;
+font-size:10px;
+//float:right;
 }
 .comment-meta.commentmetadata a:hover {
 color:#6600ff;
 }
+.comment-body {
+padding-top:10px;
+padding-bottom:10px;
+//display:flex;
+}
 .comment-body p {
 margin:0;
-padding:40px 0 0 45px;
+padding:40px 10px 0 60px;
+font-size:12px;
+//display:inline-block;
+//float:left;
+}
+.likebtn_container {
+width:100px;
+float:right;
+margin-bottom:5px;
+padding-right:5px;
+}
+.lb-style-youtube .lb-like-icon {
+width:14px;
+height:14px;
+}
+.lb-like-label {
+}
+.reply {
+width:100px;
+//display:inline-block;
 }
 .reply a {
 font-size:10px;
 text-decoration:none;
 padding-left:10px;
+color:#9999ff;
+}
+.reply a:hover {
+color:#6600ff;
 }
 .comment-respond {
-	background-color:orange;
+	background-color:#99ccff;
+border-radius:10px;
 }
 .comment-reply-title {
 	width:100px;
@@ -914,6 +1328,10 @@ padding-left:10px;
 	margin:0;
 	float:left;
 	//display:flex;
+}
+.comment-reply-title a {
+text-decoration:none;
+display:inline-block;
 }
 .logged-in-as {
 	float:right;
@@ -939,23 +1357,72 @@ line-height:12px;
 .form-submit {
 margin:0;
 }
-.testbutton {
-	background-color: #222222;
+
+#areaimageoverlay, #routeimageoverlay {
+font-size:20px;
+z-index: 100;
+//background-color:#fff;
+position:fixed; 
+top:25%; 
+left:0px; 
+width:100%; 
+height:100%; 
+text-align:center; 
+vertical-align:middle;
 }
-#testoverlay {
-	//display:none;
-	position:fixed;
-	top:0;
-	left:0;
-	height:100%;
-	width:100%;
-opacity: 0.5;   /*supported by current Mozilla, Safari, and Opera*/
-	background-color:#000000;
-	//background-color:rgba(0,0,0,0.5);
-	z-index:10;
+#areaimageoverlay a, #routeimageoverlay a{
+color:#fff;
+font-size:10px;
+text-decoration:none;
 }
 
-/* BUDDYPRESS */
-.memberspage {
-padding:20px;
+#fade {
+    position:fixed;  
+    left:0px;     
+    top:0px; 
+    background-color: black;
+    -moz-opacity: 0.7; 
+    opacity: .90;
+    filter: alpha(opacity=70);
+    width: 100%;
+    height: 100%;
+    z-index: 90; 
+}
+.pagenav {
+display:block;
+position:relative;
+width:980px;
+height:auto;
+margin:0 auto;
+}
+.nav-previous.alignleft {
+display:block;
+position:relative;
+top:338px;
+width:70px;
+height:70px;
+content:'>';
+color:#fff;
+font-size:30px;
+left:0px;
+float:left;
+margin:0;
+background-position:-70px -40px;
+}
+.nav-next.alignright {
+display:block;
+position:relative;
+top:338px;
+width:70px;
+height:70px;
+content:">";
+color:#fff;
+font-size:30px;
+float:right;
+//right:0px;
+//background-position:0px -40px;
+}
+.metaslider {
+margin-bottom:50px;
+//margin-left:100px;
 }
